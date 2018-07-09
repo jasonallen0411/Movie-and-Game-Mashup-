@@ -1,0 +1,378 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #055A7F;
+	}
+
+.headerBtns{
+	margin: 0px auto;
+	text-align: center;
+}
+
+#movieBtn{
+	background-color: #7F001E;
+	color: white;
+	display: inline-block;
+	margin: 0px auto;
+	margin-top: 20px;
+	border-radius: 90px;
+	-webkit-outline:0 none;
+	-moz-outline:0 none;
+	-o-outline:0 none;
+	-ms-outline:0 none;
+	outline:0 none;
+}
+
+#movieBtn:hover {
+	background-color: #2F017F;
+	color: white;
+	display: inline-block;
+	margin: 0px auto;
+	margin-top: 20px;
+	border-radius: 90px;
+	cursor: pointer;
+	-webkit-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+#gameBtn{
+	background-color: #2F017F;
+	color: white;
+	display: inline-block;
+	margin: 0px auto;
+	margin-top: 20px;
+	border-radius: 90px;
+	-webkit-outline:0 none;
+	-moz-outline:0 none;
+	-o-outline:0 none;
+	-ms-outline:0 none;
+	outline:0 none;
+}
+
+#gameBtn:hover {
+	background-color: #7F001E;
+	color: white;
+	display: inline-block;
+	margin: 0px auto;
+	margin-top: 20px;
+	border-radius: 90px;
+	cursor: pointer;
+	-webkit-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+#movieNGameBtn{
+	background-color: #61007F;
+	color: white;
+	display: inline-block;
+	margin: 0px auto;
+	margin-top: 20px;
+	border-radius: 90px;
+	-webkit-outline:0 none;
+	-moz-outline:0 none;
+	-o-outline:0 none;
+	-ms-outline:0 none;
+	outline:0 none;
+}
+
+#movieNGameBtn:hover {
+	background-color: #7F0069;
+	color: white;
+	display: inline-block;
+	margin: 0px auto;
+	margin-top: 20px;
+	border-radius: 90px;
+	cursor: pointer;
+	-webkit-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+
+
+#movieArea{
+	background-color: #3A3F63;
+}
+
+#gameArea{
+	margin-top: 10px;
+	background-color: #3A3F63;
+}
+
+
+#movieNGameSearchInput{
+	display: block;
+	margin: 0px auto;
+	margin-top: 20px;
+	width: 400px;
+	display: none;
+}
+
+#gameSearchInput{
+	display: block;
+	margin: 0px auto;
+	margin-top: 20px;
+	display: none;
+}
+
+#movieSearchInput{
+	display: block;
+	margin: 0px auto;
+	margin-top: 20px;
+	display: none;
+}
+
+#header{
+	text-align: center;
+	color: white;
+}
+
+#searchBtn{
+	background-color: #61007F;
+	color: white;
+	display: block;
+	margin: 0px auto;
+	margin-top: 20px;
+	display: none;
+	-webkit-outline:0 none;
+	-moz-outline:0 none;
+	-o-outline:0 none;
+	-ms-outline:0 none;
+	outline:0 none;
+
+}
+
+#searchBtn:hover {
+	background-color: #7F0069;
+	color: white;
+	display: block;
+	margin: 0px auto;
+	margin-top: 20px;
+	cursor: pointer;
+	-webkit-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+#searchBtnM{
+	background-color: #7F001E;
+	color: white;
+	display: block;
+	margin: 0px auto;
+	margin-top: 20px;
+	display: none;
+	-webkit-outline:0 none;
+	-moz-outline:0 none;
+	-o-outline:0 none;
+	-ms-outline:0 none;
+	outline:0 none;
+}
+#searchBtnM:hover {
+	background-color: #2F017F;
+	color: white;
+	display: block;
+	margin: 0px auto;
+	margin-top: 20px;
+	cursor: pointer;
+	-webkit-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+#searchBtnG{
+	background-color: #2F017F;
+	color: white;
+	display: block;
+	margin: 0px auto;
+	margin-top: 20px;
+	display: none;
+	-webkit-outline:0 none;
+	-moz-outline:0 none;
+	-o-outline:0 none;
+	-ms-outline:0 none;
+	outline:0 none;
+}
+
+#searchBtnG:hover {
+	background-color: #7F001E;
+	color: white;
+	display: block;
+	margin: 0px auto;
+	margin-top: 20px;
+	cursor: pointer;
+	-webkit-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+.movieStuff{
+	font-family: futura;
+	font-size: 30px;
+	color: white;
+	background-color: #29267F;
+}
+
+.movieThings{
+	position: absolute;
+	left: 350px;
+	top: 220px;
+}
+
+#movieTitle{
+	position: absolute;
+	left: 350px;
+	top: 240px;
+}
+
+#year{
+	position: absolute;
+	left: 350px;
+	top: 270px;
+}
+
+#rated{
+	position: absolute;
+	left: 350px;
+	top: 270px;
+}
+
+
+#runtime{
+	position: absolute;
+	left: 350px;
+	top: 300px;
+}
+
+#genre{
+	position: absolute;
+	left: 350px;
+	top: 330px;
+}
+
+#director{
+	position: absolute;
+	left: 350px;
+	top: 370px;
+}
+
+#writer{
+	position: absolute;
+	left: 350px;
+	top: 410px;
+}
+
+#actors{
+	position: absolute;
+	left: 350px;
+	top: 440px;
+}
+
+#released{
+	position: absolute;
+	left: 350px;
+	top: 490px;
+}
+
+.Mbuttons{
+	text-align: center;
+	margin-top: 10px;
+	display: none;
+}
+
+#robocop{
+	background-color: #B02200;
+	color: white;
+	cursor: pointer;
+}
+
+#theShining{
+	background-color: #B02200;
+	color: white;
+	cursor: pointer;
+}
+
+#rambo{
+	background-color: #B02200;
+	color: white;
+	cursor: pointer;
+}
+
+#terminator2{
+	background-color: #B02200;
+	color: white;
+	cursor: pointer;
+}
+
+.gameStuff{
+	font-family: futura;
+	font-size: 30px;
+	color: white;
+	background-color: #29267F;
+}
+
+.Gbuttons{
+	text-align: center;
+	margin-top: 10px;
+	display: none;
+}
+
+#SuperMarioBros{
+	background-color: #12007F;
+	color: white;
+	cursor: pointer;
+}
+
+#Zelda{
+	background-color: #12007F;
+	color: white;
+	cursor: pointer;
+}
+
+#Metroid{
+	background-color: #12007F;
+	color: white;
+	cursor: pointer;
+}
+
+#Doom{
+	background-color: #12007F;
+	color: white;
+	cursor: pointer;
+}
+
+
+/*@media screen and (max-width: 955px){
+	.row{
+		display: block;
+		margin: 10px;
+	}
+
+	.col4{
+		height: 350px;
+	}
+
+}*/
+
+
+
+
+/*-webkit-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-moz-transition-duration: .5s;
+	-ms-transition-duration: .5s;
+	transition-duration: .5s;*/
+
