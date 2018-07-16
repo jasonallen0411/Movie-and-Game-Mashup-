@@ -38,6 +38,7 @@ body {
 	transition-duration: 1s;
 }
 
+
 #gameBtn{
 	background-color: #2F017F;
 	color: white;
@@ -99,6 +100,10 @@ body {
 
 
 #movieArea{
+	background-image: url("http://pluspng.com/img-png/vhs-png-vhs-png-by-subliminal2012-vhs-png-by-subliminal2012-2896.png");
+	-webkit-background-size: 1800px 700px;
+	background-size: 1800px 700px;
+	background-position: center;
 	background-color: #3A3F63;
 }
 
@@ -220,16 +225,29 @@ body {
 }
 
 .movieStuff{
-	font-family: futura;
-	font-size: 30px;
+	font-family: arial;
+	font-size: 20px;
 	color: white;
-	background-color: #29267F;
+/*	background-color: #29267F;*/
 }
 
 .movieThings{
 	position: absolute;
-	left: 350px;
-	top: 220px;
+	left: 300px;
+	top: 420px;
+	background-color: rgba(56, 53, 54, .5);
+	width: 100vh;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	
+}
+
+.movieThings span{
+	font-family: futura;
+	font-size: 30px;
+	color: red;
 }
 
 #movieTitle{
@@ -318,10 +336,35 @@ body {
 }
 
 .gameStuff{
+	font-family: arial;
+	font-size: 20px;
+	color: white;
+	background-image: url("https://orig00.deviantart.net/4e54/f/2013/196/6/8/snes_cartridge_vector_by_the_desert_tiger-d6dmgw8.png");
+	-webkit-background-size: 1500px 900px;
+	background-size: 1500px 900px;
+	background-repeat: no-repeat;
+/*	background-attachment: fixed;*/
+	background-position: 0px -170px;
+/*	background-color: #29267F;*/
+}
+
+.gameThings{
+	position: relative;
+	left: 355px;
+	top: -300px;
+	font-family: arial;
+	font-size: 20px;
+	width: 100vh;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	background-color: rgba(56, 53, 54, .7);
+}
+
+.gameThings span{
+	color: red;
 	font-family: futura;
 	font-size: 30px;
-	color: white;
-	background-color: #29267F;
 }
 
 .Gbuttons{
@@ -352,6 +395,20 @@ body {
 	background-color: #12007F;
 	color: white;
 	cursor: pointer;
+}
+
+#gameCarousel{
+	display: none;
+	width: 400px;
+	position: relative;
+	left: 43%;
+}
+
+#movieCarousel{
+	display: none;
+	width: 400px;
+	position: relative;
+	left: 43%;
 }
 
 

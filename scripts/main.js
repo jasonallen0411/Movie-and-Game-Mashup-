@@ -1,4 +1,14 @@
 $("#movieBtn").click(function(){
+	$("#movieCarousel").css("position", "relative");
+	$("#movieCarousel").css("left", "43%");
+	$("#movieCarousel").css("display", "block");
+	$("#gameCarousel").css("display", "none");
+	$("#movieBtn").css("borderColor", "yellow");
+	$("#movieBtn").css("borderWidth", "medium");
+	$("#gameBtn").css("borderColor", "");
+	$("#movieNGameBtn").css("borderColor", "");
+	$("#gameBtn").css("borderWidth", "");
+	$("#movieNGameBtn").css("borderWidth", "");
 	$("#movieSearchInput").css("display", "block");
 	$("#searchBtnM").css("display", "block");
 	$(".Mbuttons").css("display", "block");
@@ -10,26 +20,36 @@ $("#movieBtn").click(function(){
 
 	$("#movieNGameSearchInput").css("display", "none");
 	$("#searchBtn").css("display", "none");
-	var tl = new TimelineMax();
+	let tl = new TimelineMax();
 	tl.from($("body"), 1, {backgroundColor: "#055A7F", ease: Power4.easeOut});
 	tl.to($("body"), 1, {backgroundColor: "#B00022", ease: Power4.easeOut});
 });
 
 $("#searchBtnM").click(function(){
-	var string = $("#movieSearchInput").val();
-	var url = "http://www.omdbapi.com/?apikey=7ad73765&t=" + string;
+	let string = $("#movieSearchInput").val();
+	let url = "http://www.omdbapi.com/?apikey=7ad73765&t=" + string;
 
 	$.getJSON(url, function(result){
 		$("#movieArea").html("");
-		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings">Title: ' + result.Title + '<br> Year: ' + result.Year + '<br> Rated: ' + result.Rated + '<br> Released: ' + result.Released + '<br> Runtime: ' + result.Runtime + '<br> Genre: ' + result.Genre + '<br> Director: ' + result.Director + '<br> Actors: ' + result.Actors + '</div></div>');
+		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings"><span>Title: </span>' + result.Title + '<br> <span>Year: </span>' + result.Year + '<br> <span>Rated: </span>' + result.Rated + '<br> <span>Released: </span>' + result.Released + '<br> <span>Runtime: </span>' + result.Runtime + '<br> <span>Genre: </span>' + result.Genre + '<br> <span>Director: </span>' + result.Director + '<br> <span>Actors: </span>' + result.Actors + '</div></div>');
 		$("#gameArea").html("");
 	});
-	var tl = new TimelineMax();
+	let tl = new TimelineMax();
 	tl.from($("#movieArea"), 2, {opacity: 0});
 	tl.to($("#movieArea"), 2, {opacity: 1});
 });
 
 $("#gameBtn").click(function(){
+	$("#gameCarousel").css("position", "relative");
+	$("#gameCarousel").css("left", "43%");
+	$("#gameCarousel").css("display", "block");
+	$("#movieCarousel").css("display", "none");
+	$("#gameBtn").css("borderColor", "yellow");
+	$("#gameBtn").css("borderWidth", "medium");
+	$("#movieBtn").css("borderColor", "");
+	$("#movieNGameBtn").css("borderColor", "");
+	$("#movieBtn").css("borderWidth", "");
+	$("#movieNGameBtn").css("borderWidth", "");
 	$("#movieSearchInput").css("display", "none");
 	$("#searchBtnM").css("display", "none");
 	$(".Mbuttons").css("display", "none");
@@ -41,7 +61,7 @@ $("#gameBtn").click(function(){
 	$("#gameSearchInput").css("display", "block");
 	$("#searchBtnG").css("display", "block");
 	$(".Gbuttons").css("display", "block");
-	var tl = new TimelineMax();
+	let tl = new TimelineMax();
 	tl.from($("body"), 1, {backgroundColor: "#055A7F", ease: Power4.easeOut});
 	tl.to($("body"), 1, {backgroundColor: "#003D7F", ease: Power4.easeOut});
 });
@@ -55,19 +75,32 @@ $("#searchBtnG").click(function(){
 			'Accept': 'application/json'
 				}
 		}).done(function(response){
-			var d = new Date(response[0].first_release_date);
+			let d = new Date(response[0].first_release_date);
+			d = d.toLocaleDateString();
 			console.log(response);
 			$("#gameArea").html("");
-			$("#gameArea").append('<div class="gameStuff">' + '<img src="https:' + response[0].cover.url + '"><br> Game Title: ' + response[0].name + '<br> Original Release Date: ' + d + '<br> Storyline: ' + response[0].storyline + '</div>');
+			$("#gameArea").append('<div class="gameStuff">' + '<img height="300px" width="300px" src="https:' + response[0].cover.url + '"><div class="gameThings"<br> <span>Game Title: </span>' + response[0].name + '<br> <span>Original Release Date: </span>' + d + '<br> <span>Storyline: </span>' + response[0].storyline + '</div></div>');
 			$("#movieArea").html("");
 		});
-		var tl = new TimelineMax();
+		let tl = new TimelineMax();
 	tl.from($("#gameArea"), 2, {opacity: 0});
 	tl.to($("#gameArea"), 2, {opacity: 1});
 	
 });
 
 $("#movieNGameBtn").click(function(){
+	$("#gameCarousel").css("display", "inline-block");
+	$("#gameCarousel").css("position", "relative");
+	$("#gameCarousel").css("left", "30%");
+	$("#movieCarousel").css("position", "relative");
+	$("#movieCarousel").css("left", "25%");
+	$("#movieCarousel").css("display", "inline-block");
+	$("#movieNGameBtn").css("borderColor", "yellow");
+	$("#movieNGameBtn").css("borderWidth", "medium");
+	$("#movieBtn").css("borderColor", "");
+	$("#gameBtn").css("borderColor", "");
+	$("#movieBtn").css("borderWidth", "");
+	$("#gameBtn").css("borderWidth", "");
 	$("#movieSearchInput").css("display", "none");
 	$("#searchBtnM").css("display", "none");
 	$(".Mbuttons").css("display", "block");
@@ -79,18 +112,18 @@ $("#movieNGameBtn").click(function(){
 	$("#gameSearchInput").css("display", "none");
 	$("#searchBtnG").css("display", "none");
 	$(".Gbuttons").css("display", "block");
-	var tl = new TimelineMax();
+	let tl = new TimelineMax();
 	tl.from($("body"), 1, {backgroundColor: "#055A7F", ease: Power4.easeOut});
 	tl.to($("body"), 1, {backgroundColor: "#B00054", ease: Power4.easeOut});
 });
 
 $("#searchBtn").click(function(){
-	var string = $("#movieNGameSearchInput").val();
-	var url = "http://www.omdbapi.com/?apikey=7ad73765&t=" + string;
+	let string = $("#movieNGameSearchInput").val();
+	let url = "http://www.omdbapi.com/?apikey=7ad73765&t=" + string;
 
 	$.getJSON(url, function(result){
 		$("#movieArea").html("");
-		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings">Title: ' + result.Title + '<br> Year: ' + result.Year + '<br> Rated: ' + result.Rated + '<br> Released: ' + result.Released + '<br> Runtime: ' + result.Runtime + '<br> Genre: ' + result.Genre + '<br> Director: ' + result.Director + '<br> Actors: ' + result.Actors + '</div></div>');
+		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings"><span>Title: </span>' + result.Title + '<br> <span>Year: </span>' + result.Year + '<br> <span>Rated: </span>' + result.Rated + '<br> <span>Released: </span>' + result.Released + '<br> <span>Runtime: </span>' + result.Runtime + '<br> <span>Genre: </span>' + result.Genre + '<br> <span>Director: </span>' + result.Director + '<br> <span>Actors: </span>' + result.Actors + '</div></div>');
 	});	
 
 	$.ajax({
@@ -101,12 +134,13 @@ $("#searchBtn").click(function(){
 			'Accept': 'application/json'
 				}
 		}).done(function(response){
-			var d = new Date(response[0].first_release_date);
+			let d = new Date(response[0].first_release_date);
+			d = d.toLocaleDateString();
 			console.log(response);
 			$("#gameArea").html("");
-			$("#gameArea").append('<div class="gameStuff">' + '<img src="https:' + response[0].cover.url + '"><br> Game Title: ' + response[0].name + '<br> Original Release Date: ' + d + '<br> Storyline: ' + response[0].storyline + '</div>');
+			$("#gameArea").append('<div class="gameStuff">' + '<img height="300px" width="300px" src="https:' + response[0].cover.url + '"><div class="gameThings"<br> <span>Game Title: </span>' + response[0].name + '<br> <span>Original Release Date: </span>' + d + '<br> <span>Storyline: </span>' + response[0].storyline + '</div></div>');
 		});
-	var tl = new TimelineMax();
+	let tl = new TimelineMax();
 	tl.from($("#movieArea"), 1, {opacity: 0});
 	tl.to($("#movieArea"), 1, {opacity: 1});
 	tl.from($("#gameArea"), 1, {opacity: 0});
@@ -120,41 +154,41 @@ $("#searchBtn").click(function(){
 
 
 $("#robocop").click(function(){
-	var url = "http://www.omdbapi.com/?apikey=7ad73765&t=robocop";
+	let url = "http://www.omdbapi.com/?apikey=7ad73765&t=robocop";
 
 	$.getJSON(url, function(result){
 		$("#movieArea").html("");
-		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings">Title: ' + result.Title + '<br> Year: ' + result.Year + '<br> Rated: ' + result.Rated + '<br> Released: ' + result.Released + '<br> Runtime: ' + result.Runtime + '<br> Genre: ' + result.Genre + '<br> Director: ' + result.Director + '<br> Actors: ' + result.Actors + '</div></div>');
+		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings"><span>Title: </span>' + result.Title + '<br> <span>Year: </span>' + result.Year + '<br> <span>Rated: </span>' + result.Rated + '<br> <span>Released: </span>' + result.Released + '<br> <span>Runtime: </span>' + result.Runtime + '<br> <span>Genre: </span>' + result.Genre + '<br> <span>Director: </span>' + result.Director + '<br> <span>Actors: </span>' + result.Actors + '</div></div>');
 	});	
 		
 });
 
 $("#theShining").click(function(){
-	var url = "http://www.omdbapi.com/?apikey=7ad73765&t=the-shining";
+	let url = "http://www.omdbapi.com/?apikey=7ad73765&t=the-shining";
 
 	$.getJSON(url, function(result){
 		$("#movieArea").html("");
-		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings">Title: ' + result.Title + '<br> Year: ' + result.Year + '<br> Rated: ' + result.Rated + '<br> Released: ' + result.Released + '<br> Runtime: ' + result.Runtime + '<br> Genre: ' + result.Genre + '<br> Director: ' + result.Director + '<br> Actors: ' + result.Actors + '</div></div>');
+		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings"><span>Title: </span>' + result.Title + '<br> <span>Year: </span>' + result.Year + '<br> <span>Rated: </span>' + result.Rated + '<br> <span>Released: </span>' + result.Released + '<br> <span>Runtime: </span>' + result.Runtime + '<br> <span>Genre: </span>' + result.Genre + '<br> <span>Director: </span>' + result.Director + '<br> <span>Actors: </span>' + result.Actors + '</div></div>');
 	});	
 		
 });
 
 $("#rambo").click(function(){
-	var url = "http://www.omdbapi.com/?apikey=7ad73765&t=rambo";
+	let url = "http://www.omdbapi.com/?apikey=7ad73765&t=rambo";
 
 	$.getJSON(url, function(result){
 		$("#movieArea").html("");
-		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings">Title: ' + result.Title + '<br> Year: ' + result.Year + '<br> Rated: ' + result.Rated + '<br> Released: ' + result.Released + '<br> Runtime: ' + result.Runtime + '<br> Genre: ' + result.Genre + '<br> Director: ' + result.Director + '<br> Actors: ' + result.Actors + '</div></div>');
+		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings"><span>Title: </span>' + result.Title + '<br> <span>Year: </span>' + result.Year + '<br> <span>Rated: </span>' + result.Rated + '<br> <span>Released: </span>' + result.Released + '<br> <span>Runtime: </span>' + result.Runtime + '<br> <span>Genre: </span>' + result.Genre + '<br> <span>Director: </span>' + result.Director + '<br> <span>Actors: </span>' + result.Actors + '</div></div>');
 	});	
 		
 });
 
 $("#terminator2").click(function(){
-	var url = "http://www.omdbapi.com/?apikey=7ad73765&t=terminator-2";
+	let url = "http://www.omdbapi.com/?apikey=7ad73765&t=terminator-2";
 
 	$.getJSON(url, function(result){
 		$("#movieArea").html("");
-		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings">Title: ' + result.Title + '<br> Year: ' + result.Year + '<br> Rated: ' + result.Rated + '<br> Released: ' + result.Released + '<br> Runtime: ' + result.Runtime + '<br> Genre: ' + result.Genre + '<br> Director: ' + result.Director + '<br> Actors: ' + result.Actors + '</div></div>');
+		$("#movieArea").append('<div class="movieStuff">' + '<img src="' + result.Poster + '"><br><div class="movieThings"><span>Title: </span>' + result.Title + '<br> <span>Year: </span>' + result.Year + '<br> <span>Rated: </span>' + result.Rated + '<br> <span>Released: </span>' + result.Released + '<br> <span>Runtime: </span>' + result.Runtime + '<br> <span>Genre: </span>' + result.Genre + '<br> <span>Director: </span>' + result.Director + '<br> <span>Actors: </span>' + result.Actors + '</div></div>');
 	});	
 		
 });
@@ -168,10 +202,11 @@ $("#SuperMarioBros").click(function(){
 			'Accept': 'application/json'
 				}
 		}).done(function(response){
-			var d = new Date(response[0].first_release_date);
+			let d = new Date(response[0].first_release_date);
+			d = d.toLocaleDateString();
 			console.log(response);
 			$("#gameArea").html("");
-			$("#gameArea").append('<div class="gameStuff">' + '<img src="https:' + response[0].cover.url + '"><br> Game Title: ' + response[0].name + '<br> Original Release Date: ' + d + '<br> Storyline: ' + response[0].storyline + '</div>');
+			$("#gameArea").append('<div class="gameStuff">' + '<img height="300px" width="300px" src="https:' + response[0].cover.url + '"><div class="gameThings"<br> <span>Game Title: </span>' + response[0].name + '<br> <span>Original Release Date: </span>' + d + '<br> <span>Storyline: </span>' + response[0].storyline + '</div></div>');
 			$("#movieArea").html("");
 		});
 });	
@@ -185,10 +220,11 @@ $("#Zelda").click(function(){
 			'Accept': 'application/json'
 				}
 		}).done(function(response){
-			var d = new Date(response[0].first_release_date);
+			let d = new Date(response[0].first_release_date);
+			d = d.toLocaleDateString();
 			console.log(response);
 			$("#gameArea").html("");
-			$("#gameArea").append('<div class="gameStuff">' + '<img src="https:' + response[0].cover.url + '"><br> Game Title: ' + response[0].name + '<br> Original Release Date: ' + d + '<br> Storyline: ' + response[0].storyline + '</div>');
+			$("#gameArea").append('<div class="gameStuff">' + '<img height="300px" width="300px" src="https:' + response[0].cover.url + '"><div class="gameThings"<br> <span>Game Title: </span>' + response[0].name + '<br> <span>Original Release Date: </span>' + d + '<br> <span>Storyline: </span>' + response[0].storyline + '</div></div>');
 			$("#movieArea").html("");
 		});
 });	
@@ -202,10 +238,11 @@ $("#Metroid").click(function(){
 			'Accept': 'application/json'
 				}
 		}).done(function(response){
-			var d = new Date(response[0].first_release_date);
+			let d = new Date(response[0].first_release_date);
+			d = d.toLocaleDateString();
 			console.log(response);
 			$("#gameArea").html("");
-			$("#gameArea").append('<div class="gameStuff">' + '<img src="https:' + response[0].cover.url + '"><br> Game Title: ' + response[0].name + '<br> Original Release Date: ' + d + '<br> Storyline: ' + response[0].storyline + '</div>');
+			$("#gameArea").append('<div class="gameStuff">' + '<img height="300px" width="300px" src="https:' + response[0].cover.url + '"><div class="gameThings"<br> <span>Game Title: </span>' + response[0].name + '<br> <span>Original Release Date: </span>' + d + '<br> <span>Storyline: </span>' + response[0].storyline + '</div></div>');
 			$("#movieArea").html("");
 		});
 });
@@ -219,10 +256,11 @@ $("#Doom").click(function(){
 			'Accept': 'application/json'
 				}
 		}).done(function(response){
-			var d = new Date(response[0].first_release_date);
+			let d = new Date(response[0].first_release_date);
+			d = d.toLocaleDateString();
 			console.log(response);
 			$("#gameArea").html("");
-			$("#gameArea").append('<div class="gameStuff">' + '<img src="https:' + response[0].cover.url + '"><br> Game Title: ' + response[0].name + '<br> Original Release Date: ' + d + '<br> Storyline: ' + response[0].storyline + '</div>');
+			$("#gameArea").append('<div class="gameStuff">' + '<img height="300px" width="300px" src="https:' + response[0].cover.url + '"><div class="gameThings"<br> <span>Game Title: </span>' + response[0].name + '<br> <span>Original Release Date: </span>' + d + '<br> <span>Storyline: </span>' + response[0].storyline + '</div></div>');
 			$("#movieArea").html("");
 		});
 });
